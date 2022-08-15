@@ -7,6 +7,7 @@ import { IonicVue } from '@ionic/vue';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
 
+
 /* Basic CSS for apps built with Ionic */
 import '@ionic/vue/css/normalize.css';
 import '@ionic/vue/css/structure.css';
@@ -19,13 +20,19 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
+import MasterLayout from './components/MasterLayout.vue';
 
 /* Theme variables */
-import './theme/variables.css';
+import './theme/principal.css';
+import './theme/inicio.css';
+import './theme/menu.css';
+import './theme/noticiasp.css';
 
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
+
+app.component('master-layout', MasterLayout);
   
 router.isReady().then(() => {
   app.mount('#app');

@@ -1,10 +1,6 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
@@ -13,16 +9,23 @@
         </ion-toolbar>
       </ion-header>
     
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <div class="principal-container">
+        <div class="title">
+        <ion-title class="container-title">EL TIEMPO DE </ion-title>
+        </div>
+        <ion-img class="container-img" src="https://i.pinimg.com/564x/fa/e2/19/fae219ff0e8f67ff58be362da33859c7.jpg"> </ion-img>
+        <ion-title class="container-title2"> LA INFORMACIÓN</ion-title>
+        <div class="button">
+        <ion-button @click="Comenzar()" shape="round" color="danger">Comenzar...</ion-button>
+         
+</div>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+<script>
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -32,9 +35,19 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonButton
+  },
+
+  methods: {
+  Comenzar(){
+    this.$router.push('/inicio')
   }
+}
+
 });
+
+
 </script>
 
 <style scoped>
